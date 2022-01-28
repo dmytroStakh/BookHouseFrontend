@@ -1,0 +1,52 @@
+<div class='card'>
+    <div class='card-header'>
+      {{pageTitle}}
+    </div>
+    <div class='card-body'>
+      <div class='table-responsive'>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>
+                <button class='btn btn-primary' 
+                [routerLink]="['/add-edit-book-copy']">
+                   Add Book Copy
+                </button>
+              </th>
+              </tr>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Reserve</th>
+              <th>Archived</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = 'let bookCopy of bookCopyList'>
+                <td> {{bookCopy.id}} </td>
+                <td> {{bookCopy.title}} </td>
+                <td> {{bookCopy.author}} </td>
+                <td> {{bookCopy.isReserved}} </td>
+                <td> {{bookCopy.isArchived}} </td>
+                <td>
+                  <button class='btn btn-primary'>
+                     Edit
+                  </button>
+                </td>
+                <td>
+                    <button class='btn btn-primary' 
+                    (click) = 'deleteBookCopy(bookCopy)'>
+               Delete
+               </button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>
+
+  

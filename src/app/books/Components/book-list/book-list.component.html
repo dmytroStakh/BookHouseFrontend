@@ -1,0 +1,49 @@
+<div class='card'>
+    <div class='card-header'>
+      {{pageTitle}}
+    </div>
+    <div class='card-body'>
+      <div class='table-responsive'>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>
+                <button class='btn btn-primary' 
+                [routerLink]="['/add-edit-book']">
+                   Add Book
+                </button>
+              </th>
+              </tr>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Author</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = 'let book of bookList'>
+                <td> {{book.id}} </td>
+                <td> {{book.title}} </td>
+                <td> {{book.author}} </td>
+                <td>
+                  <button class='btn btn-primary'>
+                     Edit
+                  </button>
+                </td>
+                <td>
+                  <button class='btn btn-primary' 
+                          (click) = 'deleteBook(book)'>
+                     Delete
+                  </button>
+                </td>
+                
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>
+
+  

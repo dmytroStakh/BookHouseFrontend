@@ -1,0 +1,38 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+    <div class="form-froup row" style="width: 60%;">
+    
+        <label class="col-sm-2 col-form-label">Is Reserved</label>
+        <div class="col-sm-10">
+            <input
+                    type="checkbox"
+                    [checked]="isReserved"
+                    (change)="isReserved = !isReserved"/>
+        </div>
+
+        <label class="col-sm-2 col-form-label">Is Archived</label>
+        <div class="col-sm-10">
+            <input
+                    type="checkbox"
+                    [checked]="isArchived"
+                    (change)="isArchived = !isArchived"/>
+        </div>
+
+        <label class="col-sm-2 col-form-label">Book Title</label>
+    <div class="col-sm-10">
+       <select class="form-control" [(ngModel)]="bookId">
+           <option>--Select--</option>
+           <option *ngFor="let book of BooksList" [ngValue]="book.id">
+               {{book.title}}
+           </option>
+       </select>
+    </div>
+    
+    </div>
+    </div>
+    
+    
+    <button (click)="addBookCopy()" class="btn btn-primary">
+        Add
+    </button>
+
