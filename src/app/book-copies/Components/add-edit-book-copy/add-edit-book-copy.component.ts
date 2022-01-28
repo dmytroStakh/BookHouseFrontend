@@ -43,7 +43,8 @@ export class AddEditBookCopyComponent implements OnInit {
                   id : this.id,
                   isReserved : this.isReserved,
                   isArchived :this.isArchived,
-                  bookId: this.bookId            };
+                  bookId: this.bookId            
+                };
 
     this.bookCopyService.addBookCopy(newBookCopy).subscribe();
 
